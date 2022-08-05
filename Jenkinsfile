@@ -18,7 +18,6 @@ pipeline {
         stage('new') {
           steps {
             echo 'new'
-            node(label: 'node1')
           }
         }
 
@@ -28,6 +27,7 @@ pipeline {
     stage('end') {
       steps {
         echo 'end'
+        input(message: 'Deploy to Stage', ok: 'Yes, let\'s do it')
       }
     }
 
