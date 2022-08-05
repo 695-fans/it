@@ -12,12 +12,14 @@ pipeline {
         stage('deploy') {
           steps {
             echo 'deploy'
+            node(label: 'node1')
           }
         }
 
         stage('new') {
           steps {
             echo 'new'
+            input(message: 'deploy to stage', ok: 'Yes, let\'s do it')
           }
         }
 
