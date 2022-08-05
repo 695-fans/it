@@ -18,6 +18,7 @@ pipeline {
         stage('new') {
           steps {
             echo 'new'
+            node(label: 'node1')
           }
         }
 
